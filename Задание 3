@@ -1,0 +1,12 @@
+Предположим есть три таблицы:
+С продуктами (PRODUCTS) (столбцы с Id и Имя_продукта)
+С категориями (CATEGORIES) (столбцы с Id и Имя_категории)
+"Таблица-связь" (PC) (столбцы с ProductId и CategoryId)
+
+
+SELECT PRODUCTS."Имя_продукта", CATEGORIES."Имя_категории"
+FROM PRODUCTS
+LEFT JOIN PC
+  ON PRODUCTS.Id = PC.ProductId
+LEFT JOIN CATEGORIES
+  ON PC.CategoryId = CATEGORIES.Id
